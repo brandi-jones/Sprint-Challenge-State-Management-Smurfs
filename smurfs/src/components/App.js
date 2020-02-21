@@ -10,10 +10,12 @@ const store = createStore(reducer, applyMiddleware(thunk));
 
 function App() {
   return (
-    <div className="AppContainer">
-       <h1>Smurf Village</h1>
-       <SmurfsList/>
-    </div>
+    <Provider store={store}>
+      <div className="AppContainer">
+        <h1>Smurf Village</h1>
+        <SmurfsList/>
+      </div>
+    </Provider>
   );
 }
 
