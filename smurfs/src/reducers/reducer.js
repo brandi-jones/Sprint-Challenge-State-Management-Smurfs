@@ -1,4 +1,4 @@
-import {FETCH_DATA, UPDATE_CHARACTERS, SET_ERROR} from '../actions/index';
+import {FETCH_DATA, UPDATE_CHARACTERS, SET_ERROR, POST_DATA} from '../actions/index';
 
 
 const initialState = {
@@ -26,6 +26,15 @@ export const reducer = (state= initialState, action) => {
                 ...state,
                 isFetchingData: false,
                 error: action.payload
+            }
+
+        case POST_DATA:
+            return {
+                ...state, 
+                smurfs: [
+                    ...state.smurfs,
+                    action.payload
+                ]
             }
 
         default:

@@ -5,6 +5,7 @@ import {reducer} from '../reducers/reducer';
 import {Provider} from 'react-redux';
 import thunk from 'redux-thunk';
 import SmurfsList from './SmurfsList';
+import NewSmurfForm from './NewSmurfForm';
 
 const store = createStore(reducer, applyMiddleware(thunk));
 
