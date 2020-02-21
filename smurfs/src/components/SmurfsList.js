@@ -11,8 +11,23 @@ const SmurfsList = (props) => {
 
     return (
         <div className="SmurfListContainer">
-            <h2>Smurf List Component</h2>
+            
             <button onClick={handleGetData}>Take me to the Village</button>
+
+
+            {props.error ? (
+                <div className="error">{props.error}</div>
+            ) : (
+                props.smurfs.map(smurf => 
+                    <div className="smurfCard">
+                        <h4>Name: {smurf.name}</h4>
+                        <h5>Age: {smurf.age}</h5>
+                        <h6>Height: {smurf.height}</h6>
+                    </div>
+                )
+            )}
+            
+
         </div>
     );
 }
@@ -20,6 +35,8 @@ const SmurfsList = (props) => {
 const mapStateToProps = (state) => {
     return {
         isFetchingData: state.isFetchingData,
+        smurfs: state.smurfs,
+        error: state.error
     }
 }
 
