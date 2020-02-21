@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {connect} from 'react-redux';
 import {postData} from '../actions/index';
+import {Button, Form, FormGroup, Label, Input} from 'reactstrap';
 
 const NewSmurfForm = (props) => {
 
@@ -35,35 +36,41 @@ const NewSmurfForm = (props) => {
         <div className="NewSmurfFormContainer">
             <h3>Add a new smurf to the village!</h3>
 
-            <form onSubmit={handleSubmit}>
-        
-                <label for="name">Name: </label>
-                <input
+            <Form onSubmit={handleSubmit}>
+
+                <FormGroup>
+                <Label for="name">Name: </Label>
+                <Input
                     type="text"
                     name="name"
                     value={newSmurf.name}
                     onChange={handleChanges}
                 />
+                </FormGroup>
 
-                <label for="age">Age: </label>
-                <input
+                <FormGroup>
+                <Label for="age">Age: </Label>
+                <Input
                     type="text"
                     name="age"
                     value={newSmurf.age}
                     onChange={handleChanges}
                 />
+                </FormGroup>
 
-                <label for="height">Height: </label>
-                <input
+                <FormGroup>
+                <Label for="height">Height: </Label>
+                <Input
                     type="text"
                     name="height"
                     value={newSmurf.height}
                     onChange={handleChanges}
                 />
+                </FormGroup>
 
-                <button>Add Smurf</button>
+                <Button>Add Smurf</Button>
 
-            </form>
+            </Form>
         </div>
     )
 }
